@@ -4,7 +4,7 @@ namespace PlaybondsApi.Services;
 
 public class GameService(NotificationService notificationService)
 {
-  private static readonly decimal _maxTime = 5;
+  private static readonly decimal _maxTime = 30;
   private State _state = new(string.Empty);
   private readonly NotificationService _notificationService = notificationService;
 
@@ -33,7 +33,7 @@ public class GameService(NotificationService notificationService)
   /// Verifica se o jogo foi iniciado.
   /// </summary>
   /// <returns>Boleano indicando se iniciado.</returns>
-  public bool IsGameStarted() => GetPlayers().Count == 3;
+  public bool IsGameStarted() => GetPlayers().Count == 4;
 
   /// <summary>
   /// Retorna a lista de jogadores.
